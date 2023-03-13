@@ -25,10 +25,13 @@ const a = {
 // })
 
 const change = {
-  'innerText' : '안녕하세요',
-  'style.width' : '500px',
-  'style.height' : '500px',
-  'style.backgroundColor' : 'aqua'
+  'innerText' : '안녕하세요'
+}
+
+const styleChange = {
+  'width' : '500px',
+  'height' : '500px',
+  'backgroundColor' : 'aqua'
 }
 
 const test_p = document.createElement('p');
@@ -39,4 +42,27 @@ Object.keys(change).forEach(function (keys) {
   test_p[keys] = change[keys];
 })
 
+Object.keys(styleChange).forEach(function (key) {
+  test_p.style[key] = styleChange[key];
+})
+
 console.dir(test_p);
+
+
+const A = ['가', '나', '다', '라', '마', '바', '사']
+console.log(...A);
+console.log([...A]);
+console.log([{...A}]);
+
+
+const glovalValue = 1000;
+function outerFunc() {
+  let outerLocalValue = 100;
+  function innerFunc() {
+    let innerLocalValue = 30;
+    return innerLocalValue;
+  }
+  // console.log(innerLocalValue);
+  return glovalValue + outerLocalValue + innerLocalValue;
+}
+console.log(outerFunc());
