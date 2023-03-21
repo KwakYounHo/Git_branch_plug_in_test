@@ -66,3 +66,4 @@ function outerFunc() {
   return glovalValue + outerLocalValue + innerLocalValue;
 }
 console.log(outerFunc());
+console.log('이 글은 수정 되었습니다. 브랜치 테스트를 위하여');
